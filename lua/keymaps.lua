@@ -1,37 +1,43 @@
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+vim.g.mapleader = ' '
+local keymap = vim.keymap
+keymap.set({ 'i', 'v' }, 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
+keymap.set('n', 'J', 'mzJ`z')
+keymap.set('n', '<C-d>', '<C-d>zz')
+keymap.set('n', '<C-u>', '<C-u>zz')
+keymap.set('n', 'n', 'nzzzv')
+keymap.set('n', 'N', 'Nzzzv')
+keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
 
--- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- increment/decrement numbers
+keymap.set('n', '<leader>+', '<C-a>', { desc = 'Increment number' }) -- increment
+keymap.set('n', '<leader>-', '<C-x>', { desc = 'Decrement number' }) -- decrement
 
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- window management
+keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
+keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
+keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
+keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+keymap.set('n', '<leader>tt', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
+keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
+keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
+keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
+keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
+keymap.set('n', '<leader>to', '<cmd>tabo<CR>', { desc = 'Close other tabs' }) -- close current split window
+keymap.set('n', '<leader>th', '<cmd>-tabmove<CR>', { desc = 'Move tab to the right' }) -- close current split window
+keymap.set('n', '<leader>tl', '<cmd>+tabmove<CR>', { desc = 'Move tab to the left' }) -- close current split window
 
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+-- Command to close all buffer except for current
+vim.api.nvim_create_user_command('BufOnly', function()
+  vim.cmd 'silent! execute "%bd|e#|bd#"'
+end, {})
+-- Buffers
+keymap.set('n', '<leader>be', "<cmd>bufdo if empty(bufname('%'))|bw|endif<CR>", { desc = 'Close all empty buffers' }) -- close current split window
+keymap.set('n', '<leader>bo', '<cmd>BufOnly<CR>', { desc = 'Close other buffers' }) -- close current split window
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- [[ Basic Autocommands ]]
+-- Go to end or start of line ignoring empty spaces and new line
+keymap.set('n', '0', '_', { desc = 'Go to end of line' })
+keymap.set('n', '$', 'g_', { desc = 'Go to end of line' })
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
