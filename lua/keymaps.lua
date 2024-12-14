@@ -18,14 +18,14 @@ keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) 
 keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
 keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
-keymap.set('n', '<leader>tt', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
-keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
-keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
-keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
-keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
-keymap.set('n', '<leader>to', '<cmd>tabo<CR>', { desc = 'Close other tabs' }) -- close current split window
-keymap.set('n', '<leader>th', '<cmd>-tabmove<CR>', { desc = 'Move tab to the right' }) -- close current split window
-keymap.set('n', '<leader>tl', '<cmd>+tabmove<CR>', { desc = 'Move tab to the left' }) -- close current split window
+keymap.set('n', '<leader><tab><tab>', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
+keymap.set('n', '<leader><tab>x', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
+keymap.set('n', '<leader><tab>n', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
+keymap.set('n', '<leader><tab>p', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go to previous tab
+keymap.set('n', '<leader><tab>f', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
+keymap.set('n', '<leader><tab>o', '<cmd>tabo<CR>', { desc = 'Close other tabs' }) -- close current split window
+keymap.set('n', '<leader><tab>h', '<cmd>-tabmove<CR>', { desc = 'Move tab to the right' }) -- close current split window
+keymap.set('n', '<leader><tab>l', '<cmd>+tabmove<CR>', { desc = 'Move tab to the left' }) -- close current split window
 
 -- Command to close all buffer except for current
 vim.api.nvim_create_user_command('BufOnly', function()
