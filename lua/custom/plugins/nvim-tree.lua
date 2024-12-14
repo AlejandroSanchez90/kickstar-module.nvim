@@ -2,7 +2,7 @@ return {
   'nvim-tree/nvim-tree.lua',
   dependencies = { 'nvim-tree/nvim-web-devicons', 'antosha417/nvim-lsp-file-operations', 'nvim-lua/plenary.nvim' },
   keys = {
-    { '<leader>e' },
+    -- { '<leader>e' },
   },
   config = function()
     require('lsp-file-operations').setup()
@@ -86,7 +86,7 @@ return {
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
-    keymap.set('n', '<leader>e', '<cmd>NvimTreeFindFile<CR>', { desc = 'Toggle file explorer' }) -- toggle file explorer
+    -- keymap.set('n', '<leader>e', '<cmd>NvimTreeFindFile<CR>', { desc = 'Toggle file explorer' }) -- toggle file explorer
     -- keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFile<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
     -- keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
     -- keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
