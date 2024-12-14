@@ -5,7 +5,23 @@ return {
   config = function()
     -- calling `setup` is optional for customization
     local fzflua = require 'fzf-lua'
-    fzflua.setup {}
+    fzflua.setup {
+      grep = {
+        multiline = 1,
+      },
+      keymap = {
+        builtin = {
+          true,
+          ['<C-d>'] = 'preview-page-down',
+          ['<C-u>'] = 'preview-page-up',
+        },
+        fzf = {
+          true,
+          ['ctrl-d'] = 'preview-page-down',
+          ['ctrl-u'] = 'preview-page-up',
+        },
+      },
+    }
 
     local keymap = vim.keymap -- for conciseness
 
