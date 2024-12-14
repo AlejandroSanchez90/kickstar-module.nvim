@@ -7,6 +7,10 @@ return {
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 100,
+      },
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -26,7 +30,7 @@ return {
         -- Navigation
         map('n', ']c', function()
           if vim.wo.diff then
-            vim.cmd.normal { ']c', bang = true }
+            vim.cmd.normal { ']h', bang = true }
           else
             gitsigns.nav_hunk 'next'
           end
@@ -34,7 +38,7 @@ return {
 
         map('n', '[c', function()
           if vim.wo.diff then
-            vim.cmd.normal { '[c', bang = true }
+            vim.cmd.normal { '[h', bang = true }
           else
             gitsigns.nav_hunk 'prev'
           end
@@ -61,8 +65,8 @@ return {
           gitsigns.diffthis '@'
         end, { desc = 'git [D]iff against last commit' })
         -- Toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
-        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
+        map('n', '<leader>htb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
+        map('n', '<leader>htd', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
       end,
     },
   },
