@@ -1,10 +1,5 @@
--- Here is a more advanced example where we pass configuration
--- options to `gitsigns.nvim`. This is equivalent to the following Lua:
---    require('gitsigns').setup({ ... })
---
--- See `:help gitsigns` to understand what the configuration keys do
 return {
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       current_line_blame = true,
@@ -27,7 +22,6 @@ return {
           vim.keymap.set(mode, l, r, opts)
         end
 
-        -- Navigation
         map('n', ']c', function()
           if vim.wo.diff then
             vim.cmd.normal { ']h', bang = true }
@@ -44,15 +38,13 @@ return {
           end
         end, { desc = 'Jump to previous git [c]hange' })
 
-        -- Actions
-        -- visual mode
         map('v', '<leader>hs', function()
           gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, { desc = 'stage git hunk' })
         map('v', '<leader>hr', function()
           gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, { desc = 'reset git hunk' })
-        -- normal mode
+
         map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
         map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
         map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
@@ -64,7 +56,7 @@ return {
         map('n', '<leader>hD', function()
           gitsigns.diffthis '@'
         end, { desc = 'git [D]iff against last commit' })
-        -- Toggles
+
         map('n', '<leader>htb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>htd', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
       end,

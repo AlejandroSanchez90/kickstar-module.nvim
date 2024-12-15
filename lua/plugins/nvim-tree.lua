@@ -8,7 +8,7 @@ return {
     require('lsp-file-operations').setup()
     local nvimtree = require 'nvim-tree'
     local api = require 'nvim-tree.api'
-    -- recommended settings from nvim-tree documentation
+
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
@@ -19,10 +19,8 @@ return {
         return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
       end
 
-      -- default mappings
       api.config.mappings.default_on_attach(bufnr)
 
-      -- custom mappings
       vim.keymap.set('n', 'l', '<cmd>NvimTreeResize +10<CR>', opts 'Resize +')
       vim.keymap.set('n', 'h', '<cmd>NvimTreeResize -10<CR>', opts 'Resize -')
     end
@@ -34,23 +32,18 @@ return {
         width = 35,
         relativenumber = true,
       },
-      -- change folder arrow icons
+
       renderer = {
         indent_markers = {
           enable = true,
         },
         icons = {
           glyphs = {
-            folder = {
-              -- arrow_closed = "", -- arrow when folder is closed
-              -- arrow_open = "", -- arrow when folder is open
-            },
+            folder = {},
           },
         },
       },
-      -- disable window_picker for
-      -- explorer to work well with
-      -- window splits
+
       actions = {
         change_dir = {
           enable = false,
@@ -65,10 +58,6 @@ return {
         },
       },
 
-      -- Follows active buffer in tree
-      -- update_focused_file = {
-      -- 	enable = true,
-      -- },
       tab = { sync = { open = true, close = true, ignore = {} } },
       filters = {
         custom = { '.DS_Store' },
@@ -83,8 +72,7 @@ return {
       },
     }
 
-    -- set keymaps
-    local keymap = vim.keymap -- for conciseness
+    local keymap = vim.keymap
 
     -- keymap.set('n', '<leader>e', '<cmd>NvimTreeFindFile<CR>', { desc = 'Toggle file explorer' }) -- toggle file explorer
     -- keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFile<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file

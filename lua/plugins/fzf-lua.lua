@@ -1,9 +1,8 @@
 return {
   'ibhagwan/fzf-lua',
-  -- optional for icon support
+
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    -- calling `setup` is optional for customization
     local fzflua = require 'fzf-lua'
     fzflua.setup {
       grep = {
@@ -23,7 +22,7 @@ return {
       },
     }
 
-    local keymap = vim.keymap -- for conciseness
+    local keymap = vim.keymap
 
     function SendBuffersToQuickfix()
       local bufs = vim.api.nvim_list_bufs()
