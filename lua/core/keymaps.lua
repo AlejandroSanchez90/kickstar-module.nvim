@@ -38,11 +38,7 @@ keymap.set('n', '<leader>bo', '<cmd>BufOnly<CR>', { desc = 'Close other buffers'
 -- Go to end or start of line ignoring empty spaces and new line
 keymap.set('n', '0', '_', { desc = 'Go to end of line' })
 keymap.set('n', '$', 'g_', { desc = 'Go to end of line' })
---  See `:help lua-guide-autocommands`
 
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
