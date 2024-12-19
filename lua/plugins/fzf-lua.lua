@@ -5,8 +5,14 @@ return {
   config = function()
     local fzflua = require 'fzf-lua'
     fzflua.setup {
+      winopts = {
+        preview = {
+          vertical = 'up:65',
+          layout = 'vertical',
+        },
+      },
       grep = {
-        multiline = 1,
+        -- multiline = 1,
       },
       keymap = {
         builtin = {
