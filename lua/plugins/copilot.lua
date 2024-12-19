@@ -18,7 +18,7 @@ return {
         question_header = ' Message',
         answer_header = ' Copilot',
         error_header = ' Error',
-        auto_follow_cursor = false,
+        auto_follow_cursor = true,
         context = 'buffer',
       }
 
