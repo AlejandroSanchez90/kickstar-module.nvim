@@ -5,7 +5,7 @@ return {
   build = ':UpdateRemotePlugins',
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
-    'nvim-telescope/telescope.nvim',
+    -- 'nvim-telescope/telescope.nvim',
     'neovim/nvim-lspconfig',
   },
   opts = {
@@ -17,11 +17,11 @@ return {
     document_color = {
       enabled = true,
       kind = 'inline',
-      inline_symbol = 'C ',
+      inline_symbol = '󰝤 ',
       debounce = 200,
     },
     conceal = {
-      enabled = true,
+      enabled = false,
       min_length = nil,
       symbol = '󱏿',
       highlight = {
