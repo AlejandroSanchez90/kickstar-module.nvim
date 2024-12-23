@@ -33,7 +33,7 @@ vim.api.nvim_create_user_command('BufOnly', function()
 end, {})
 -- Buffers
 keymap.set('n', '<leader>be', "<cmd>bufdo if empty(bufname('%'))|bw|endif<CR>", { desc = 'Close all empty buffers' }) -- close current split window
-keymap.set('n', '<leader>bo', '<cmd>BufOnly<CR>', { desc = 'Close other buffers' }) -- close current split window
+-- keymap.set('n', '<leader>bo', '<cmd>BufOnly<CR>', { desc = 'Close other buffers' }) -- close current split window
 
 -- Go to end or start of line ignoring empty spaces and new line
 keymap.set('n', '0', '_', { desc = 'Go to end of line' })

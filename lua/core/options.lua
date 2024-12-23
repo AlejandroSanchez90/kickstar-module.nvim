@@ -49,6 +49,9 @@ opt.wrap = true
 -- sign column
 opt.colorcolumn = '80'
 
+-- confirm before closing unsaved buffer
+opt.confirm = true
+
 ---Highlight yank
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
