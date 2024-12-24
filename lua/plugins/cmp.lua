@@ -20,6 +20,7 @@ return {
           },
         },
       },
+      'hrsh7th/cmp-buffer',
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
@@ -68,6 +69,7 @@ return {
           },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
+          { name = 'buffer' },
           { name = 'path' },
         },
         formatting = {
