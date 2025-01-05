@@ -10,7 +10,6 @@ return {
       opts = {
         timeout = 2000,
         background_colour = '#000000',
-        max_width = 50,
         top_down = false,
       },
     },

@@ -64,3 +64,12 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.formatoptions:remove { 'r', 'o' }
   end,
 })
+
+-- number column mini.files
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'MiniFilesWindowUpdate',
+  callback = function(args)
+    vim.wo[args.data.win_id].number = true
+    vim.wo[args.data.win_id].relativenumber = true
+  end,
+})
