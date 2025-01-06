@@ -18,7 +18,8 @@ return {
         group = lint_augroup,
         callback = function()
           if vim.opt_local.modifiable:get() then
-            lint.try_lint()
+            -- lint.try_lint()
+            pcall(lint.try_lint)
           end
         end,
       })
