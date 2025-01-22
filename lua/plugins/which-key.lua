@@ -45,7 +45,7 @@ return {
         { '<leader>o', group = '[O]perators' },
         { '<leader>b', group = '[B]uffers' },
         { '<leader>n', group = 'Misc' },
-        { '<leader>s', group = '[S]plits' },
+        { '<leader>w', group = '[W]indows' },
         { '<leader>r', group = 'LSP' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>x', group = 'Trouble' },
