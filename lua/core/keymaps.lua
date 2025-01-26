@@ -18,7 +18,6 @@ keymap.set('n', '<leader>wh', '<C-w>s', { desc = 'Split window horizontally' }) 
 keymap.set('n', '<leader>we', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
 keymap.set('n', '<leader>wx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
-keymap.set('n', '<tab>', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
 keymap.set('n', '<leader><tab><tab>', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
 keymap.set('n', '<leader><tab>x', '<cmd>tabclose<CR>', { desc = 'Close current tab' }) -- close current tab
 keymap.set('n', '<leader><tab>n', '<cmd>tabn<CR>', { desc = 'Go to next tab' }) --  go to next tab
