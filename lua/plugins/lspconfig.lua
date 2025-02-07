@@ -87,6 +87,7 @@ return {
           'javascriptreact',
           'css',
           'sass',
+          'tailwindcss',
           'scss',
           'less',
           'svelte',
