@@ -4,15 +4,6 @@ return {
   event = 'VeryLazy',
   dependencies = {
     'MunifTanjim/nui.nvim',
-    {
-
-      'rcarriga/nvim-notify',
-      opts = {
-        timeout = 2000,
-        background_colour = '#000000',
-        top_down = false,
-      },
-    },
   },
   opts = {
     lsp = {

@@ -26,15 +26,8 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          local fzflua = require 'fzf-lua'
-          map('gr', fzflua.lsp_references, '[G]oto [R]eferences')
-          map('gd', fzflua.lsp_definitions, '[G]oto [D]efinition')
-          map('gi', fzflua.lsp_implementations, '[G]oto [I]mplementation')
-          map('gD', fzflua.lsp_declarations, '[G]oto [D]eclaration')
-          map('gt', fzflua.lsp_typedefs, '[T]ype [D]efinition')
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('<leader>d', vim.diagnostic.open_float, 'Show Line Diagnostic')
-          map('<leader>D', fzflua.diagnostics_document, 'Show Document Diagnostic')
           map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
           map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
           map('K', vim.lsp.buf.hover, 'Next Diagnostic')
