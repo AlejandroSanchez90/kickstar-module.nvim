@@ -1,5 +1,11 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap
+
+keymap.set({ 'n', 'i' }, '<c-s>', function()
+  vim.cmd 'wa'
+  vim.notify('Files Saved', vim.log.levels.INFO)
+end, { desc = 'Save all' })
+
 keymap.set({ 'i', 'v' }, 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
 keymap.set('n', 'J', 'mzJ`z')
 keymap.set('n', '<C-d>', '<C-d>zz')
