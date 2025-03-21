@@ -7,6 +7,15 @@ return {
       'MeanderingProgrammer/render-markdown.nvim',
       'nvim-tree/nvim-web-devicons',
       'norcalli/nvim-colorizer.lua',
+      -- this is to have the scope context as header
+      -- {
+      --   'nvim-treesitter/nvim-treesitter-context',
+      --   opts = {
+      --     enable = true,
+      --     multiline_threshold = 1,
+      --     max_lines = 3,
+      --   },
+      -- },
     },
     config = function()
       local treesitter = require 'nvim-treesitter.configs'
