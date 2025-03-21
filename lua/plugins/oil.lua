@@ -4,6 +4,9 @@ return {
   ---@type oil.SetupOpts
   opts = {
     prompt_save_on_select_new_entry = false,
+    keymaps = {
+      ['q'] = { 'actions.close', mode = 'n' },
+    },
     skip_confirm_for_simple_edits = true,
     view_options = {
       show_hidden = true,
