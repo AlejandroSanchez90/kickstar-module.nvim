@@ -1,8 +1,7 @@
 return {
-
   'otavioschwanck/arrow.nvim',
-  keys = {
-    { "'" },
+  jhdependencies = {
+    { 'nvim-tree/nvim-web-devicons' },
   },
   opts = {
     show_icons = true,
