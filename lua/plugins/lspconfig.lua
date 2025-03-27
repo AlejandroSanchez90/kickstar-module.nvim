@@ -70,10 +70,11 @@ return {
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local servers = {
-        ts_ls = {
-          filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
-        },
+        -- ts_ls = {
+        --   filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+        -- },
         tailwindcss = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+
         ['emmet_language_server'] = {
           'html',
           'typescriptreact',
@@ -102,7 +103,6 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
-        'ts_ls',
         'html',
         'cssls',
         'tailwindcss',
