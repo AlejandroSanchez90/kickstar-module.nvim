@@ -11,7 +11,7 @@ return {
         enabled = true,
       },
       signature = {
-        enabled = true,
+        enabled = false,
         auto_open = {
           enabled = true,
           throttle = 2000,
