@@ -20,6 +20,36 @@ return {
   },
   keys = {
     {
+      '<leader><space>',
+      function()
+        require('snacks').picker.smart {
+          sort_lastused = true,
+          multi = { 'buffers', 'recent', 'files' },
+          format = 'file', -- use `file` format for all sources
+          matcher = {
+            cwd_bonus = true, -- boost cwd matches
+            frecency = true, -- use frecency boosting
+            sort_empty = true, -- sort even when the filter is empty
+          },
+          -- sort = { fields = { 'is_cwd', 'idx', 'score:desc', '#text' } },
+          transform = 'unique_file',
+        }
+      end,
+      desc = 'Smart Find Files',
+    },
+    {
+      '<leader>fu',
+      function()
+        Snacks.picker.undo {
+          on_show = function()
+            vim.cmd.stopinsert()
+          end,
+        }
+      end,
+      desc = 'LSP Workspace Symbols',
+    },
+    {
+
       '<leader>z',
       function()
         Snacks.zen.zen()
@@ -63,17 +93,6 @@ return {
       desc = 'Find Files',
     },
     {
-      '<leader><space>',
-      function()
-        Snacks.picker.smart {
-          on_show = function()
-            vim.cmd.stopinsert()
-          end,
-        }
-      end,
-      desc = 'Smart Find Files',
-    },
-    {
       '<leader>fr',
       function()
         Snacks.picker.resume()
@@ -81,24 +100,16 @@ return {
       desc = 'Resume',
     },
     {
-      '<leader>fu',
-
-      function()
-        Snacks.picker.undo {
-          on_show = function()
-            vim.cmd.stopinsert()
-          end,
-        }
-      end,
-      desc = 'LSP Workspace Symbols',
-    },
-    {
       '<leader>fb',
       function()
-        Snacks.picker.buffers {
-          on_show = function()
-            vim.cmd.stopinsert()
-          end,
+        require('snacks').picker.buffers {
+          sort_lastused = true,
+          focus = 'list', -- open in normal mode for immediate j/k navigation
+          win = {
+            preview = {
+              wo = { number = false, relativenumber = false },
+            },
+          },
         }
       end,
       desc = 'Buffers',
