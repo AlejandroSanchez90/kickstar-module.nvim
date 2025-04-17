@@ -81,6 +81,18 @@ return {
       desc = 'Resume',
     },
     {
+      '<leader>fu',
+
+      function()
+        Snacks.picker.undo {
+          on_show = function()
+            vim.cmd.stopinsert()
+          end,
+        }
+      end,
+      desc = 'LSP Workspace Symbols',
+    },
+    {
       '<leader>fb',
       function()
         Snacks.picker.buffers {
