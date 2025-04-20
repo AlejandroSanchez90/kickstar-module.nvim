@@ -14,6 +14,15 @@ keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')
 keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
 
+-- This is to return with c-o when using #k/#j to jump lines
+keymap.set('n', 'k', function()
+  return vim.v.count > 0 and "m'" .. vim.v.count .. 'k' or 'gk'
+end, { expr = true })
+
+vim.keymap.set('n', 'j', function()
+  return vim.v.count > 0 and "m'" .. vim.v.count .. 'j' or 'gj'
+end, { expr = true })
+
 -- increment/decrement numbers
 keymap.set('n', '<leader>+', '<C-a>', { desc = 'Increment number' }) -- increment
 keymap.set('n', '<leader>-', '<C-x>', { desc = 'Decrement number' }) -- decrement
