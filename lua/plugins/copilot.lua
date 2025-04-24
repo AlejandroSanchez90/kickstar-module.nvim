@@ -6,7 +6,6 @@ return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
 
-    keys = { '<leader>gcc' },
     dependencies = {
       { 'github/copilot.vim' },
       { 'nvim-lua/plenary.nvim', branch = 'master' },
@@ -25,7 +24,6 @@ return {
       local keymap = vim.keymap
 
       keymap.set('n', '<leader>gcc', chat.toggle, { desc = 'Copilot Chat' })
-      keymap.set('n', '<leader>gcr', chat.toggle, { desc = 'Copilot Chat' })
       keymap.set('n', '<leader>gcd', '<cmd>CopilotChatFixDiagnostic<CR>', { desc = 'Copilot Diagnostics' })
       keymap.set('n', '<leader>gcf', '<cmd>CopilotChatFix<CR>', { desc = 'Copilot Fix' })
       keymap.set('n', '<leader>gcm', '<cmd>CopilotChatCommit<CR>', { desc = 'Copilot Commit Message' })
