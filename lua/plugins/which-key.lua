@@ -53,7 +53,6 @@ return {
         { '<leader>h', group = 'Hunk', mode = { 'n', 'v' } },
         { '<leader>g', group = 'Git' },
         { '<leader>gc', group = 'Copilot Actions' },
-        { '<leader>gd', group = 'Document Actions' },
       },
     },
   },
