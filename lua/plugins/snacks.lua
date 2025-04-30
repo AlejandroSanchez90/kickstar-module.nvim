@@ -69,8 +69,7 @@ return {
                       item.pos = { header.new.start + sign_count, 0 }
                       sign_count = sign_count + 1
                     else
-                      item.pos = { header.new.start, 0 }
-                      sign_count = 0
+                      return false
                     end
                     return true
                   end
