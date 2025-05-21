@@ -10,7 +10,7 @@ return {
       '<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<CR>',
       desc = 'Open trouble document diagnostics',
     },
-    { '<leader>xq', '<cmd>Trouble quickfix toggle<CR>', desc = 'Open trouble quickfix list' },
+    { '<leader>xq', '<cmd>Trouble qflist toggle<CR>', desc = 'Open trouble quickfix list' },
     { '<leader>xl', '<cmd>Trouble loclist toggle<CR>', desc = 'Open trouble location list' },
     { '<leader>xs', '<cmd>Trouble symbols toggle focus=false<CR>', desc = 'Open trouble symbols' },
     { '<leader>xt', '<cmd>TodoTrouble focus=true<CR>', desc = 'Open todos in trouble' },
