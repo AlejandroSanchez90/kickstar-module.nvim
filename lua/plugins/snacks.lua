@@ -13,6 +13,8 @@ return {
     picker = {
       enabled = true,
       sources = {
+        files = { hidden = true },
+        grep = { hidden = true },
         git_grep_hunks = {
           supports_live = false,
           format = function(item, picker)
