@@ -81,6 +81,11 @@ return {
             }, ctx)
           end,
         },
+        smart = {
+          multi = { 'buffers', 'recent', 'files' },
+          sort = { fields = { 'source_id' } },
+          filter = { cwd = true },
+        },
       },
     },
     notifier = { enabled = true },
