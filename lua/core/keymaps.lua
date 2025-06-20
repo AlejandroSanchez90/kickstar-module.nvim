@@ -6,7 +6,7 @@ keymap.set({ 'n', 'i' }, '<c-s>', function()
   vim.notify('Files Saved', vim.log.levels.INFO)
 end, { desc = 'Save all' })
 
-keymap.set({ 'i', 'v' }, 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
+keymap.set('i', 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
 keymap.set('n', 'J', 'mzJ`z')
 keymap.set('n', '<C-d>', '<C-d>zz')
 keymap.set('n', '<C-u>', '<C-u>zz')
