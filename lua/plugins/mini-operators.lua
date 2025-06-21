@@ -3,7 +3,9 @@ return {
   version = '*',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
-    require('mini.operators').setup {
+    local miniOperators = require 'mini.operators'
+
+    miniOperators.setup {
       evaluate = {
         prefix = '<leader>o=',
         func = nil,
@@ -25,5 +27,9 @@ return {
         func = nil,
       },
     }
+
+    vim.keymap.set('x', 'm', function()
+      miniOperators.multiply 'visual'
+    end, { desc = 'MiniOperators: multiply (visual)', noremap = true, silent = true })
   end,
 }
