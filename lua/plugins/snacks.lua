@@ -141,6 +141,20 @@ return {
       desc = 'Diagnostics',
     },
     {
+      '<leader>fh',
+      function()
+        Snacks.picker.help()
+      end,
+      desc = 'Help',
+    },
+    {
+      '<leader>fk',
+      function()
+        Snacks.picker.keymaps()
+      end,
+      desc = 'Help',
+    },
+    {
       '<leader>fdd',
       function()
         Snacks.picker.diagnostics_buffer {
