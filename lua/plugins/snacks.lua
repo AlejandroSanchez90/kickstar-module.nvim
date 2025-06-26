@@ -83,7 +83,7 @@ return {
         },
         smart = {
           multi = { 'buffers', 'recent', 'files' },
-          sort = { fields = { 'source_id' } },
+          -- sort = { fields = { 'source_id', 'idx' } },
           filter = { cwd = true },
         },
       },

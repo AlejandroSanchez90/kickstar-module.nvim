@@ -6,6 +6,8 @@ return {
     prompt_save_on_select_new_entry = false,
     keymaps = {
       ['q'] = { 'actions.close', mode = 'n' },
+
+      ['<C-s>'] = {},
     },
     skip_confirm_for_simple_edits = true,
     view_options = {
