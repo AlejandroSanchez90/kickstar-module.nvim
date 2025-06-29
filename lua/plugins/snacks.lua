@@ -40,7 +40,7 @@ return {
               f_opts,
               {
                 cmd = 'git',
-                args = { 'diff', '--unified=0' },
+                args = { 'diff', 'HEAD', '--unified=0' },
                 transform = function(item) ---@param item snacks.picker.finder.Item
                   local line = item.text
                   -- [[Header]]
