@@ -3,17 +3,6 @@ return {
   dependencies = {
     'rafamadriz/friendly-snippets',
     'onsails/lspkind.nvim',
-    {
-      'echasnovski/mini.snippets',
-      config = function()
-        require('mini.snippets').setup {
-          mappings = {
-            jump_next = '<Tab>',
-            jump_prev = '<S-Tab>',
-          },
-        }
-      end,
-    },
   },
   version = '1.*',
   ---@module 'blink.cmp'
@@ -25,9 +14,9 @@ return {
       ['<C-e>'] = { 'hide', 'fallback' },
       ['<C-y>'] = { 'accept', 'fallback' },
 
-      ['<Tab>'] = {},
-      ['<S-Tab>'] = {},
-
+      ['<Tab>'] = { 'snippet_forward', 'fallback' },
+      -- Navigate to the previous suggestion or cancel completion if currently on the first one.
+      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
       ['<Up>'] = { 'select_prev', 'fallback' },
       ['<Down>'] = { 'select_next', 'fallback' },
       ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
@@ -104,11 +93,11 @@ return {
 
     signature = { enabled = true, window = { border = 'single' } },
 
-    snippets = {
-      expand = function(snippet)
-        require('mini.snippets').default_insert { body = snippet }
-      end,
-    },
+    -- snippets = {
+    --   expand = function(snippet)
+    --     require('mini.snippets').default_insert { body = snippet }
+    --   end,
+    -- },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
