@@ -1,8 +1,19 @@
 return {
   'NeogitOrg/neogit',
   dependencies = {
+    {
+      'sindrets/diffview.nvim',
+      config = function()
+        require('diffview').setup {
+          view = {
+            merge_tool = {
+              layout = 'diff3_mixed', -- 2 horizontal, main vertical
+            },
+          },
+        }
+      end,
+    },
     'nvim-lua/plenary.nvim',
-    'sindrets/diffview.nvim',
   },
   config = function()
     local neogit = require 'neogit'
