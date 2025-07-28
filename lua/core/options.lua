@@ -3,6 +3,7 @@ local opt = vim.opt
 
 -- Limit windows to 10 items
 opt.pumheight = 10
+opt.winborder = 'single'
 
 opt.relativenumber = true
 opt.number = true
