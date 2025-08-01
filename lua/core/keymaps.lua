@@ -8,20 +8,22 @@ end, { desc = 'Save all' })
 
 keymap.set('i', 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
 keymap.set('n', 'J', 'mzJ`z')
-keymap.set('n', '<C-d>', '<C-d>zz')
-keymap.set('n', '<C-u>', '<C-u>zz')
 keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')
 keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
+keymap.set('n', '<C-o>', '<C-o>zz', { noremap = true })
+keymap.set('n', '<C-i>', '<C-i>zz', { noremap = true })
 
--- This is to return with c-o when using #k/#j to jump lines
+-- Save cursor position to go back to it with c-o c-i
 keymap.set('n', 'k', function()
-  return vim.v.count > 0 and "m'" .. vim.v.count .. 'k' or 'gk'
+  return vim.v.count > 0 and "m'" .. vim.v.count .. 'kzz' or "m'gk" or "m'<C-d>"
 end, { expr = true })
-
-vim.keymap.set('n', 'j', function()
-  return vim.v.count > 0 and "m'" .. vim.v.count .. 'j' or 'gj'
+keymap.set('n', 'j', function()
+  return vim.v.count > 0 and "m'" .. vim.v.count .. 'jzz' or "m'gj"
 end, { expr = true })
+keymap.set('n', '<C-d>', "m'<C-d>zz", { noremap = true, expr = false })
+keymap.set('n', '<C-u>', "m'<C-u>zz", { noremap = true, expr = false })
+-- end
 
 -- increment/decrement numbers
 keymap.set('n', '<leader>+', '<C-a>', { desc = 'Increment number' }) -- increment
@@ -63,3 +65,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+-- Yank into system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y') -- yank motion
+vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y') -- yank line
+
+-- Delete into system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d') -- delete motion
+vim.keymap.set({ 'n', 'v' }, '<leader>D', '"+D') -- delete line
+
+-- Paste from system clipboard
+vim.keymap.set('n', '<leader>p', '"+p') -- paste after cursor
+vim.keymap.set('n', '<leader>P', '"+P') -- paste before cursor
