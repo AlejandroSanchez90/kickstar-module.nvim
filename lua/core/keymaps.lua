@@ -44,6 +44,11 @@ keymap.set('n', '<leader>to', '<cmd>tabo<CR>', { desc = 'Close other tabs' }) --
 keymap.set('n', '<leader>th', '<cmd>-tabmove<CR>', { desc = 'Move tab to the right' }) -- close current split window
 keymap.set('n', '<leader>tl', '<cmd>+tabmove<CR>', { desc = 'Move tab to the left' }) -- close current split window
 
+-- Accidental macro mode trigger handler
+vim.keymap.set('n', 'q', '<nop>', { noremap = true })
+vim.keymap.set('n', 'Q', 'q', { noremap = true, desc = 'Record macro' })
+vim.keymap.set('n', '<c-q>', 'Q', { noremap = true, desc = 'Replay last register' })
+
 -- Command to close all buffer except for current
 vim.api.nvim_create_user_command('BufOnly', function()
   vim.cmd 'silent! execute "%bd|e#|bd#"'
