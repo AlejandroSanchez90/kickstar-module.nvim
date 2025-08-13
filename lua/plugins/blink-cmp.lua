@@ -42,6 +42,8 @@ return {
         },
       },
       documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 200,
         window = {
           max_width = math.floor(vim.o.columns * 0.4),
           max_height = math.floor(vim.o.lines * 0.5),
