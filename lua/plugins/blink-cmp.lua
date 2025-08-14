@@ -57,8 +57,9 @@ return {
     },
 
     signature = { enabled = true },
+
+    snippets = { preset = 'luasnip' },
     sources = {
-      snippets = { preset = 'luasnip' },
       default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
       providers = {
         lazydev = {
