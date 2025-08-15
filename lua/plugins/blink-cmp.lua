@@ -3,7 +3,14 @@ return {
   dependencies = {
     'rafamadriz/friendly-snippets',
     'onsails/lspkind.nvim',
-    { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+    {
+      'L3MON4D3/LuaSnip',
+      version = 'v2.*',
+      dependencies = { 'rafamadriz/friendly-snippets' },
+      config = function()
+        require('luasnip.loaders.from_vscode').lazy_load()
+      end,
+    },
   },
   version = '1.*',
   ---@module 'blink.cmp'
