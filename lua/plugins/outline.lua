@@ -4,7 +4,6 @@ return {
     -- Example mapping to toggle outline
     vim.keymap.set('n', 'gs', '<cmd>Outline<CR>', { desc = 'Toggle Outline' })
 
-    print 'worked'
     require('outline').setup {
 
       outline_window = {
