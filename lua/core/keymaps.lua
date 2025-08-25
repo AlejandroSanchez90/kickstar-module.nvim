@@ -11,8 +11,8 @@ keymap.set('n', 'J', 'mzJ`z')
 keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')
 keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
-keymap.set('n', '<C-o>', '<C-o>zz', { noremap = true })
-keymap.set('n', '<C-i>', '<C-i>zz', { noremap = true })
+-- keymap.set('n', '<C-o>', '<C-o>zz', { noremap = true })
+-- keymap.set('n', '<C-i>', '<C-i>zz', { noremap = true })
 
 -- Save cursor position to go back to it with c-o c-i
 keymap.set('n', 'k', function()
