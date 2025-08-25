@@ -24,13 +24,10 @@ return {
 
       local keymap = vim.keymap
 
-      keymap.set('n', '<leader>ac', chat.toggle, { desc = 'Copilot Chat' })
-      keymap.set('n', '<leader>ad', '<cmd>CopilotChatFixDiagnostic<CR>', { desc = 'Copilot Diagnostics' })
-      -- keymap.set('n', '<leader>gcf', '<cmd>CopilotChatFix<CR>', { desc = 'Copilot Fix' })
-      keymap.set('n', '<leader>am', '<cmd>CopilotChatCommit<CR>', { desc = 'Copilot Commit Message' })
-      keymap.set('n', '<leader>ag', function()
-        chat.ask 'Explain how it works'
-      end, { desc = 'Copilot How it works' })
+      keymap.set({ 'n', 'v' }, '<leader>ac', chat.toggle, { desc = 'copilot chat' })
+      keymap.set({ 'n', 'v' }, '<leader>af', '<cmd>CopilotChatFix<cr>', { desc = 'copilot fix' })
+      keymap.set('n', '<leader>am', '<cmd>CopilotChatCommit<cr>', { desc = 'Copilot commit message' })
+      keymap.set({ 'n', 'v' }, '<leader>ap', '<cmd>CopilotChatPrompts<cr>', { desc = 'Copilot Prompts' })
     end,
   },
 }
