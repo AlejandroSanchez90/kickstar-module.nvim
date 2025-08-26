@@ -25,6 +25,7 @@ return {
       local keymap = vim.keymap
 
       keymap.set({ 'n', 'v' }, '<leader>ac', chat.toggle, { desc = 'copilot chat' })
+      keymap.set({ 'n', 'v' }, '<leader>ar', '<cmd>CopilotChatReset<cr>', { desc = 'copilot reset' })
       keymap.set({ 'n', 'v' }, '<leader>af', '<cmd>CopilotChatFix<cr>', { desc = 'copilot fix' })
       keymap.set('n', '<leader>am', '<cmd>CopilotChatCommit<cr>', { desc = 'Copilot commit message' })
       keymap.set({ 'n', 'v' }, '<leader>ap', '<cmd>CopilotChatPrompts<cr>', { desc = 'Copilot Prompts' })
