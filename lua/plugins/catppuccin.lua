@@ -9,11 +9,11 @@ return {
     -- Line number colors (set after colorscheme)
     function LineNumberColors()
       -- Line number colors
-      vim.api.nvim_set_hl(0, 'LineNr', { fg = '#585b70', bold = false })
+      vim.api.nvim_set_hl(0, 'LineNr', { fg = '#696b7e', bold = false })
       -- Current cursor number
       vim.api.nvim_set_hl(0, 'CursorLineNr', { bold = true })
       -- Cursor backgroun line color
-      vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#11111b', bold = false })
+      -- vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#11111b', bold = false })
     end
     LineNumberColors()
   end,
