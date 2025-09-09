@@ -12,10 +12,10 @@ return {
       return 'Macro: ' .. reg
     end
 
+    local arrow_status = require 'arrow.statusline'
     local function isRecordingActive()
       return vim.fn.reg_recording() ~= ''
     end
-
     lualine.setup {
       options = {
         theme = 'catppuccin',
@@ -34,10 +34,23 @@ return {
             color = { fg = '#ff9e64' },
           },
         },
-        lualine_c = { { 'filename', path = 1, file_status = true } },
+        lualine_c = {
+          { 'filename', path = 0, file_status = true, color = { gui = 'bold' } },
+
+          -- arrow per file
+          {
+            function()
+              return arrow_status.text_for_statusline_with_icons()
+            end,
+            cond = function()
+              return arrow_status.is_on_arrow_file() ~= nil
+            end,
+            color = { fg = '#51cf66', gui = 'bold' },
+          },
+        },
       },
       inactive_sections = {
-        lualine_c = { { 'filename', path = 1, file_status = true } },
+        lualine_c = { { 'filename', path = 0, file_status = true } },
       },
     }
   end,
