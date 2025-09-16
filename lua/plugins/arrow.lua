@@ -12,7 +12,7 @@ return {
       buffer_leader_key = 'm',
       separate_by_branch = true,
       per_buffer_config = {
-        lines = 1, -- Number of lines showed on preview.
+        lines = 5, -- Number of lines showed on preview.
       },
     }
 
@@ -22,8 +22,8 @@ return {
       end, { desc = 'Go to Arrow file ' .. idx })
     end
 
-    vim.keymap.set('n', 'H', require('arrow.persist').previous)
-    vim.keymap.set('n', 'L', require('arrow.persist').next)
+    -- vim.keymap.set('n', 'H', require('arrow.persist').previous)
+    -- vim.keymap.set('n', 'L', require('arrow.persist').next)
     vim.keymap.set('n', 'M', require('arrow.persist').toggle)
     gotoMap(1)
     gotoMap(2)

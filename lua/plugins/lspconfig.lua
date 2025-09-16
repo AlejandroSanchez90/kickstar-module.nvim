@@ -1,6 +1,7 @@
 return {
   {
     'folke/lazydev.nvim',
+    version = '1.9.0',
     ft = 'lua',
     opts = {
       library = {
