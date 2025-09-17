@@ -2,6 +2,7 @@ vim.cmd 'let g:netrw_liststyle = 3'
 local opt = vim.opt
 
 opt.virtualedit = 'block'
+opt.diffopt = 'internal,filler,closeoff'
 -- Limit windows to 10 items
 opt.pumheight = 10
 opt.winborder = 'single'
