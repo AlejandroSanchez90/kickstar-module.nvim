@@ -31,7 +31,15 @@ return {
   },
   config = function()
     local neogit = require 'neogit'
-    neogit.setup {}
+    neogit.setup {
+      git_services = {
+        ['git.eogresources.com'] = {
+          pull_request = 'https://git.eogresources.com/${owner}/${repository}/compare/${branch_name}?expand=1',
+          commit = 'https://git.eogresources.com/${owner}/${repository}/commit/${oid}',
+          tree = 'https://git.eogresources.com/${owner}/${repository}/tree/${branch_name}',
+        },
+      },
+    }
 
     vim.keymap.set('v', '<leader>gl', "<cmd>'<,'>DiffviewFileHistory<cr>", { desc = 'Line History' })
     vim.keymap.set('n', '<leader>go', '<cmd>Neogit<cr>', { desc = 'Open NeoGit' })
