@@ -12,7 +12,7 @@ return {
       buffer_leader_key = 'm',
       separate_by_branch = true,
       per_buffer_config = {
-        lines = 1, -- Number of lines showed on preview.
+        lines = 5, -- Number of lines showed on preview.
       },
     }
 

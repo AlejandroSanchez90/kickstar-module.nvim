@@ -35,7 +35,6 @@ return {
           },
         },
         lualine_c = {
-          { 'filename', path = 0, file_status = true, color = { gui = 'bold' } },
 
           -- arrow per file
           {
@@ -47,6 +46,7 @@ return {
             end,
             color = { fg = '#51cf66', gui = 'bold' },
           },
+          { 'filename', path = 1, file_status = true, color = { gui = 'bold' } },
         },
       },
       inactive_sections = {
