@@ -2,7 +2,7 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     opts = {
-      current_line_blame = true,
+      -- current_line_blame = true,
       current_line_blame_opts = {
         delay = 100,
       },
@@ -22,7 +22,7 @@ return {
           vim.keymap.set(mode, l, r, opts)
         end
 
-        map('n', ']c', function()
+        map('n', '<leader>hl', function()
           if vim.wo.diff then
             vim.cmd.normal { ']h', bang = true }
           else
@@ -30,7 +30,7 @@ return {
           end
         end, { desc = 'Jump to next git [c]hange' })
 
-        map('n', '[c', function()
+        map('n', '<leader>hh', function()
           if vim.wo.diff then
             vim.cmd.normal { '[h', bang = true }
           else
