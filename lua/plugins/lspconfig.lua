@@ -18,6 +18,17 @@ return {
 
         { 'mason-org/mason.nvim', opts = {} },
         {
+          'j-hui/fidget.nvim',
+          opts = {
+            notification = { -- NOTE: you're missing this outer table
+              window = {
+                winblend = 0, -- NOTE: it's winblend, not blend
+              },
+            },
+            -- options
+          },
+        },
+        {
           'pmizio/typescript-tools.nvim',
           dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
           opts = {},
