@@ -133,7 +133,6 @@ return {
           'marksman',
           'prettier',
           'prisma-language-server',
-          'stylua',
           'tailwindcss-language-server', -- for tailwind we need to install server npm install -g @tailwindcss/language-server
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
