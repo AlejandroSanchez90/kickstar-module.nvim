@@ -17,6 +17,11 @@ return {
       dependencies = {
 
         { 'mason-org/mason.nvim', opts = {} },
+        {
+          'pmizio/typescript-tools.nvim',
+          dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+          opts = {},
+        },
         'mason-org/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         'saghen/blink.cmp',
@@ -34,7 +39,7 @@ return {
             map('<leader>d', vim.diagnostic.open_float, 'Show Line Diagnostic')
             map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
             map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
-            map('K', vim.lsp.buf.hover, 'Next Diagnostic')
+            map('K', vim.lsp.buf.hover, 'Show hover')
             map('<leader>rs', ':LspRestart<CR>', 'Restart LSP')
 
             map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
