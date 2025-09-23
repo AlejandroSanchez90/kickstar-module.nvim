@@ -129,6 +129,7 @@ return {
               },
             },
           },
+          eslint = {},
         }
 
         local ensure_installed = vim.tbl_keys(servers or {})
@@ -154,9 +155,7 @@ return {
           handlers = {
             function(server_name)
               -- Skip all TypeScript servers since we use typescript-tools.nvim
-              if server_name == 'ts_ls' or 
-                 server_name == 'tsserver' or 
-                 server_name == 'typescript-language-server' then
+              if server_name == 'ts_ls' or server_name == 'tsserver' or server_name == 'typescript-language-server' then
                 return
               end
 
