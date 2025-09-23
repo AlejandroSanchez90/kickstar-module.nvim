@@ -28,11 +28,6 @@ return {
             -- options
           },
         },
-        {
-          'pmizio/typescript-tools.nvim',
-          dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-          opts = {},
-        },
         'mason-org/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         'saghen/blink.cmp',
@@ -158,8 +153,14 @@ return {
           automatic_installation = false,
           handlers = {
             function(server_name)
-              local server = servers[server_name] or {}
+              -- Skip all TypeScript servers since we use typescript-tools.nvim
+              if server_name == 'ts_ls' or 
+                 server_name == 'tsserver' or 
+                 server_name == 'typescript-language-server' then
+                return
+              end
 
+              local server = servers[server_name] or {}
               server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
               require('lspconfig')[server_name].setup(server)
             end,

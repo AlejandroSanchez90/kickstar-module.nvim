@@ -22,7 +22,7 @@ return {
       signature = {
         enabled = false,
         auto_open = {
-          enabled = true,
+          enabled = false,
           throttle = 2000,
           trigger = true,
         },
