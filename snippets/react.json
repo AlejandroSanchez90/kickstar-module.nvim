@@ -18,5 +18,15 @@
     "prefix": "usestatecustom",
     "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
     "description": "useState with proper camel casing for setter function name."
+  },
+  "ESLint disable exhaustive deps": {
+    "prefix": "eslintdep",
+    "body": ["// eslint-disable-next-line react-hooks/exhaustive-deps"],
+    "description": "Disable ESLint exhaustive deps rule for next line"
+  },
+  "ESLint disable TS indent": {
+    "prefix": "eslintindent",
+    "body": ["/* eslint-disable @typescript-eslint/indent */", "", "$0"],
+    "description": "Disable TypeScript ESLint indent rule"
   }
 }
