@@ -96,13 +96,13 @@ return {
     words = { enabled = true },
   },
   keys = {
-    {
-      '<leader><space>',
-      function()
-        require('snacks').picker.smart()
-      end,
-      desc = 'Smart Find Files',
-    },
+    -- {
+    --   '<leader><space>',
+    --   function()
+    --     require('snacks').picker.smart()
+    --   end,
+    --   desc = 'Smart Find Files',
+    -- },
     {
       '<leader>fu',
       function()
