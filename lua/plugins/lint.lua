@@ -7,6 +7,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        -- python = { 'ruff' }, -- Disabled to avoid duplicate errors with Pyright LSP
         -- javascript = { 'eslint' },
         -- typescript = { 'eslint' },
         -- javascriptreact = { 'eslint' },

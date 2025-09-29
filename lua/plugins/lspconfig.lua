@@ -130,6 +130,7 @@ return {
             },
           },
           eslint = {},
+          pyright = {},
         }
 
         local ensure_installed = vim.tbl_keys(servers or {})
@@ -145,6 +146,8 @@ return {
           'marksman',
           'prettier',
           'prisma-language-server',
+          'pyright',
+          'ruff',
           'tailwindcss-language-server', -- for tailwind we need to install server npm install -g @tailwindcss/language-server
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
