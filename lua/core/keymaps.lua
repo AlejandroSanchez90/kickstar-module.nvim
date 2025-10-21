@@ -6,21 +6,28 @@ keymap.set({ 'n', 'i' }, '<c-s>', function()
   vim.notify('Files Saved', vim.log.levels.INFO)
 end, { desc = 'Save all' })
 
-keymap.set('i', 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
+-- commented in favoe to the snippet cancel
+-- keymap.set('i', 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
+vim.keymap.set({ 'i', 's' }, 'kj', function()
+  -- to use with build in snippet
+  -- vim.snippet.stop()
+  require('luasnip').unlink_current()
+  return '<Esc>'
+end, { expr = true })
 keymap.set('n', 'J', 'mzJ`z')
 keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')
 keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
--- keymap.set('n', '<C-o>', '<C-o>zz', { noremap = true })
--- keymap.set('n', '<C-i>', '<C-i>zz', { noremap = true })
+keymap.set('n', '<C-o>', '<C-o>zz', { noremap = true })
+keymap.set('n', '<C-i>', '<C-i>zz', { noremap = true })
 
--- Save cursor position to go back to it with c-o c-i
 keymap.set('n', 'k', function()
-  return vim.v.count > 0 and "m'" .. vim.v.count .. 'k' or "m'gk" or "m'<C-d>"
+  return vim.v.count > 0 and "m'" .. vim.v.count .. 'k' or 'gk'
 end, { expr = true })
 keymap.set('n', 'j', function()
-  return vim.v.count > 0 and "m'" .. vim.v.count .. 'j' or "m'gj"
+  return vim.v.count > 0 and "m'" .. vim.v.count .. 'j' or 'gj'
 end, { expr = true })
+
 keymap.set('n', '<C-d>', "m'<C-d>zz", { noremap = true, expr = false })
 keymap.set('n', '<C-u>', "m'<C-u>zz", { noremap = true, expr = false })
 -- end
