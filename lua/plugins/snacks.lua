@@ -37,9 +37,8 @@ return {
               new = { start = 0, count = 0 },
             }
             local sign_count = 0
-            return require('snacks.picker.source.proc').proc({
-              f_opts,
-              {
+            return require('snacks.picker.source.proc').proc(
+              vim.tbl_extend('force', f_opts or {}, {
                 cmd = 'git',
                 args = { 'diff', 'HEAD', '--unified=0' },
                 transform = function(item) ---@param item snacks.picker.finder.Item
@@ -59,7 +58,7 @@ return {
                     header.old.start, header.old.count = tonumber(old_start), tonumber(old_count) or 1
                     header.new.start, header.new.count = tonumber(new_start), tonumber(new_count) or 1
                     sign_count = 0
-                    -- [[Body]]
+                  -- [[Body]]
                   elseif not line:match '^[+-]' then
                     sign_count = 0
                   elseif line:match '^[+-]%s*$' then
@@ -78,8 +77,9 @@ return {
                   end
                   return false
                 end,
-              },
-            }, ctx)
+              }),
+              ctx
+            )
           end,
         },
         smart = {
