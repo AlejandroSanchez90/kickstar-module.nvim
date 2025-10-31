@@ -43,8 +43,13 @@ return {
 
             map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
             map('<leader>d', vim.diagnostic.open_float, 'Show Line Diagnostic')
-            map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
-            map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
+
+            map('[d', function()
+              vim.diagnostic.jump { count = -1, float = true }
+            end, 'Previous Diagnostic')
+            map(']d', function()
+              vim.diagnostic.jump { count = 1, float = true }
+            end, 'Next Diagnostic')
             map('K', vim.lsp.buf.hover, 'Show hover')
             map('<leader>rs', ':LspRestart<CR>', 'Restart LSP')
 
