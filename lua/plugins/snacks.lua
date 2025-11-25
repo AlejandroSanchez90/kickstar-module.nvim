@@ -9,7 +9,7 @@ return {
     bigfile = { enabled = true },
     rename = { enabled = true },
     bufdelete = { enabled = true },
-    indent = { enabled = true },
+    -- indent = { enabled = true },
     input = { enabled = true },
     picker = {
       enabled = true,

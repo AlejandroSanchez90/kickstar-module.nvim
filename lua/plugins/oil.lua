@@ -8,6 +8,13 @@ return {
       ['q'] = { 'actions.close', mode = 'n' },
 
       ['<C-s>'] = {},
+      ['yp'] = {
+        desc = 'Copy filepath to system clipboard',
+        callback = function()
+          require('oil.actions').copy_entry_path.callback()
+          vim.fn.setreg('+', vim.fn.getreg(vim.v.register))
+        end,
+      },
     },
     skip_confirm_for_simple_edits = true,
     view_options = {
