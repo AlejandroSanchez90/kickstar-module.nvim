@@ -29,7 +29,20 @@ return {
           enable_close_on_slash = false,
         },
       }
-      require('render-markdown').setup {}
+      require('render-markdown').setup {
+        code = {
+          sign = false,
+          width = 'block',
+          right_pad = 1,
+        },
+        heading = {
+          sign = false,
+          icons = {},
+        },
+        checkbox = {
+          enabled = false,
+        },
+      }
       treesitter.setup {
         ignore_install = {},
         sync_install = false,
@@ -42,14 +55,14 @@ return {
         indent = { enable = true },
 
         ensure_installed = {
-          'json',
+          'json5',
           'javascript',
           'typescript',
           'tsx',
           'yaml',
           'html',
           'css',
-          'prisma',
+          -- 'prisma',
           'markdown',
           'markdown_inline',
           'bash',
@@ -59,7 +72,7 @@ return {
           'gitignore',
           'query',
           'vimdoc',
-          'c',
+          -- 'c',
         },
         incremental_selection = {
           enable = true,
