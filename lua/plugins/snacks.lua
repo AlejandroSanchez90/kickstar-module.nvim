@@ -95,6 +95,11 @@ return {
     statuscolumn = { enabled = true },
     zen = { enabled = true },
     words = { enabled = true },
+    lazygit = { enabled = true, win = {
+      width = 0,
+      height = 0,
+      border = 'none',
+    } },
   },
   keys = {
     -- {
