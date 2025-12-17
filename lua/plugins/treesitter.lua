@@ -1,6 +1,7 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master',
     build = ':TSUpdate',
     dependencies = {
       'windwp/nvim-ts-autotag',
@@ -62,6 +63,7 @@ return {
           'yaml',
           'html',
           'css',
+          'diff',
           -- 'prisma',
           'markdown',
           'markdown_inline',

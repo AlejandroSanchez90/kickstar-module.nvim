@@ -6,15 +6,19 @@ return {
   },
   {
     'CopilotC-Nvim/CopilotChat.nvim',
-
     dependencies = {
-      { 'github/copilot.vim' },
       { 'nvim-lua/plenary.nvim', branch = 'master' },
     },
+    build = 'make tiktoken',
 
     config = function()
       local chat = require 'CopilotChat'
       chat.setup {
+        mappings = {
+          complete = {
+            insert = '<C-t>',
+          },
+        },
         question_header = ' Message',
         answer_header = ' Copilot',
         error_header = ' Error',

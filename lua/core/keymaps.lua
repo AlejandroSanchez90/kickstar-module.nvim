@@ -11,7 +11,10 @@ end, { desc = 'Save all' })
 vim.keymap.set({ 'i', 's' }, 'kj', function()
   -- to use with build in snippet
   -- vim.snippet.stop()
-  require('luasnip').unlink_current()
+  local luasnip = package.loaded['luasnip']
+  if luasnip then
+    luasnip.unlink_current()
+  end
   return '<Esc>'
 end, { expr = true })
 keymap.set('n', 'J', 'mzJ`z')

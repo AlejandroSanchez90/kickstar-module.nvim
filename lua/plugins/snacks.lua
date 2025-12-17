@@ -13,6 +13,7 @@ return {
     input = { enabled = true },
     picker = {
       enabled = true,
+      ui_select = true,
       sources = {
         files = { hidden = true },
         grep = { hidden = true },
@@ -199,7 +200,7 @@ return {
       function()
         Snacks.picker.git_grep_hunks()
       end,
-      desc = 'Grep Open Buffers',
+      desc = 'Search git diff',
     },
     {
       '<leader>fs',
