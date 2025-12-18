@@ -246,6 +246,17 @@ return {
       desc = 'Goto Definition',
     },
     {
+      'gt',
+      function()
+        Snacks.picker.lsp_type_definitions {
+          on_show = function()
+            vim.cmd.stopinsert()
+          end,
+        }
+      end,
+      desc = 'Goto Type Definition',
+    },
+    {
       'gi',
       function()
         Snacks.picker.lsp_implementations {
