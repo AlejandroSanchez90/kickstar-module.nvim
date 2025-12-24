@@ -1,4 +1,5 @@
 return {
+  -- testing
   --test
   'folke/snacks.nvim',
   priority = 1000,
