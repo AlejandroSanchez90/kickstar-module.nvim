@@ -5,10 +5,8 @@ return {
       ensure_installed = {
         'cssls',
         'emmet_language_server',
-        'eslint',
         'lua_ls',
         'jsonls',
-
         'vtsls',
         'tailwindcss',
         -- 'html',

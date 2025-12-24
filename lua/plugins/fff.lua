@@ -12,6 +12,12 @@ return {
       enabled = true, -- we expect your collaboration at least during the beta
       show_scores = true, -- to help us optimize the scoring system, feel free to share your scores!
     },
+    preview = {
+      show_file_info = true,
+    },
+    git = {
+      status_text_color = true, -- Apply git status colors to filename text (default: false, only sign column)
+    },
   },
   -- No need to lazy-load with lazy.nvim.
   -- This plugin initializes itself lazily.
