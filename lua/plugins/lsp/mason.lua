@@ -36,6 +36,7 @@ return {
       ensure_installed = {
         'stylua',
         'markdownlint',
+        'prettier',
       },
     },
     dependencies = {
