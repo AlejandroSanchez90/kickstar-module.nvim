@@ -7,7 +7,7 @@ return {
         'emmet_language_server',
         'lua_ls',
         'jsonls',
-        'vtsls',
+        -- 'vtsls',
         'tailwindcss',
         -- 'html',
         'marksman',

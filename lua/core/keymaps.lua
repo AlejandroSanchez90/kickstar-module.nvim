@@ -6,11 +6,7 @@ keymap.set({ 'n', 'i' }, '<c-s>', function()
   vim.notify('Files Saved', vim.log.levels.INFO)
 end, { desc = 'Save all' })
 
--- commented in favoe to the snippet cancel
--- keymap.set('i', 'kj', '<ESC>', { desc = 'Exit insert/visual mode with kj' })
 vim.keymap.set({ 'i', 's' }, 'kj', function()
-  -- to use with build in snippet
-  -- vim.snippet.stop()
   local luasnip = package.loaded['luasnip']
   if luasnip then
     luasnip.unlink_current()
@@ -78,16 +74,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- vim: ts=2 sts=2 sw=2 et
--- Yank into system clipboard
--- vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y') -- yank motion
--- vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y') -- yank line
-
--- Delete into system clipboard
--- vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d') -- delete motion
--- vim.keymap.set({ 'n', 'v' }, '<leader>D', '"+D') -- delete line
-
--- Paste from system clipboard
--- vim.keymap.set('n', '<leader>p', '"+p') -- paste after cursor
--- vim.keymap.set('n', '<leader>P', '"+P') -- paste before cursor
