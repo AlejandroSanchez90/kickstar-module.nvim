@@ -5,7 +5,6 @@ return {
     build = ':TSUpdate',
     dependencies = {
       'windwp/nvim-ts-autotag',
-      'MeanderingProgrammer/render-markdown.nvim',
       'nvim-tree/nvim-web-devicons',
       'norcalli/nvim-colorizer.lua',
       -- this is to have the scope context as header
@@ -28,20 +27,6 @@ return {
           enable_close = true,
           enable_rename = true,
           enable_close_on_slash = false,
-        },
-      }
-      require('render-markdown').setup {
-        code = {
-          sign = false,
-          width = 'block',
-          right_pad = 1,
-        },
-        heading = {
-          sign = false,
-          icons = {},
-        },
-        checkbox = {
-          enabled = false,
         },
       }
       treesitter.setup {
