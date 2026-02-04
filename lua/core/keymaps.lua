@@ -8,7 +8,7 @@ end, { desc = 'Save all' })
 
 vim.keymap.set({ 'i', 's' }, 'kj', function()
   local luasnip = package.loaded['luasnip']
-  if luasnip then
+  if luasnip and luasnip.in_snippet() then
     luasnip.unlink_current()
   end
   return '<Esc>'
