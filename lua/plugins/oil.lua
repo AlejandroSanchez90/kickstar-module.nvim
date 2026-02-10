@@ -6,6 +6,7 @@ return {
     prompt_save_on_select_new_entry = false,
     keymaps = {
       ['q'] = { 'actions.close', mode = 'n' },
+      ['<Esc>'] = { 'actions.close', mode = 'n' },
 
       ['<C-s>'] = {},
       ['yp'] = {
