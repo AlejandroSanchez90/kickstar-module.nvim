@@ -1,7 +1,7 @@
 return {
   'echasnovski/mini.ai',
   version = '*',
-  config = function()
-    require('mini.ai').setup()
-  end,
+  opts = {
+    n_lines = 1500,
+  },
 }
