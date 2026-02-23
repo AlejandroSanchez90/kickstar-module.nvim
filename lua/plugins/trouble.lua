@@ -35,5 +35,7 @@ return {
     { '<leader>xl', '<cmd>Trouble loclist toggle<CR>', desc = 'Open trouble location list' },
     { '<leader>xs', '<cmd>Trouble symbols toggle focus=false<CR>', desc = 'Open trouble symbols' },
     { '<leader>xt', '<cmd>TodoTrouble focus=true<CR>', desc = 'Open todos in trouble' },
+    { '<leader>xn', '<cmd>TodoTrouble snacks next<CR>', desc = 'Open todos in trouble' },
+    { '<leader>xp', '<cmd>TodoTrouble snacks prev<CR>', desc = 'Open todos in trouble' },
   },
 }
